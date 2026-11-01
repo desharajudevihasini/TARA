@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#02040c"/>
+  <meta name="description" content="TĀRA — a cinematic musical universe. Sing a Carnatic phrase and discover the mathematics, physics and history behind the sound."/>
+  <title>TĀRA — The Universe Inside a Note</title>
+  <link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="showcase.css" /><link rel="stylesheet" href="songs.css" /><link rel="stylesheet" href="math-theatre.css" /><link rel="stylesheet" href="tribute.css" />
+  <script defer src="stellar.js"></script>
+  <script defer src="pitch-core.js"></script><script defer src="app.js"></script><script defer src="songs.js"></script><script defer src="math-theatre.js"></script><script defer src="tribute.js"></script>
+</head>
+<body data-tara-build="showcase-pitch-science-v2">
+  <canvas id="stellarGL" aria-hidden="true"></canvas><canvas id="starCanvas" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div><div class="music-dust" aria-hidden="true"><span>♪</span><span>♫</span><span>♩</span><span>𝄞</span><span>♪</span><span>♬</span></div>
+  <div id="transitionFlash" class="transition-flash" aria-hidden="true"></div><div id="hyperTravel" aria-hidden="true"><div class="warp-horizon"></div><span id="travelCaption">LEAVING THE GALACTIC PLANE</span><span id="travelDistance">THE JOURNEY TO SOL · 00%</span></div>
+  <div id="intro" class="intro" aria-label="Opening TĀRA title animation"><div class="logo-half first">TĀ</div><div class="logo-half second">RA</div><div class="logo-seam"></div><button id="skipIntro" class="skip-intro">SKIP INTRO ↗</button></div>
+  <header class="masthead">
+    <button id="goHome" class="brand" aria-label="Start over">TĀRA<span>✦</span></button>
+    <span class="masthead-label" id="mastheadLabel">THE M. S. SUBBULAKSHMI EDITION</span>
+    <div class="masthead-tools"><button id="soundBtn" class="tiny-control" aria-pressed="false">♫ HEAR M. S. SUBBULAKSHMI</button><button id="helpBtn" class="tiny-control">? ABOUT</button></div>
+  </header>
+<div id="tributeDock" hidden aria-hidden="true"></div>
+  
+  <div id="msAudioHost" class="hidden-ms-audio" aria-hidden="true"></div>
+  <aside id="msNowPlaying" class="soundtrack-pill" hidden aria-live="polite">
+    <div class="soundtrack-pill-copy">
+      <span class="pill-kicker">NOW PLAYING</span>
+      <strong>Bhagyada Lakshmi Baramma</strong>
+      <small>M. S. Subbulakshmi · tribute soundtrack</small>
+    </div>
+    <div class="soundtrack-pill-actions">
+      <button id="msPauseBtn" type="button">Ⅱ PAUSE</button>
+      <button id="msCloseBtn" type="button">✕</button>
+    </div>
+  </aside>
+  <main>
+    <section id="hero" class="scene active" aria-label="Introduction">
+      <div class="hero-copy"><p class="overline"><span class="pulse"></span> A JOURNEY INTO THE SOUND WE MAKE</p><h1>Want to know<br/>where it <em>really</em><br/>started?</h1><p>Every note is a vibration. Every rhythm is a pattern.<br/>And every melody has a story worth travelling for.</p><button class="launch-button" id="beginVoyage">LET'S FIND OUT <span class="arrow">↗</span></button><p class="quiet-sound-note">✦ Tap “Hear M. S. Subbulakshmi” to start the tribute soundtrack.</p></div>
+      <div class="hero-annotation">ONE SMALL NOTE. ONE VERY LARGE UNIVERSE. <span>↘</span></div>
+      <div class="right-rule">DRAG TO EXPLORE · SOUND IS OPTIONAL</div>
+    </section>
+    <section id="galaxy" class="scene" aria-label="Explore the galaxy">
+      <div class="tour-control"><button id="autoTour" class="tour-play" aria-label="Take a guided tour"><span class="play-symbol">▶</span> TAKE A TOUR</button><span>DRAG TO ORBIT · SCROLL TO ZOOM</span></div><div class="cosmic-text left"><p class="overline">01 &nbsp; / &nbsp; BEFORE THE FIRST NOTE</p><h2>Billions of stars.<br/><em>One story to follow.</em></h2><p>Move your mouse or drag to shift your view. Scroll to travel through this imagined starfield.</p><button id="toSun" class="journey-cta">FLY TO OUR SUN <span>→</span></button></div>
+      <svg id="galacticGrid" class="galactic-grid" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g class="grid-wires"><ellipse cx="600" cy="350" rx="90" ry="29" /><ellipse cx="600" cy="350" rx="160" ry="51" /><ellipse cx="600" cy="350" rx="240" ry="77" /><ellipse cx="600" cy="350" rx="320" ry="102" /><ellipse cx="600" cy="350" rx="405" ry="130" /><path d="M 600 350 L 1005.0 350.0" /><path d="M 600 350 L 998.8 372.6" /><path d="M 600 350 L 980.6 394.5" /><path d="M 600 350 L 950.7 415.0" /><path d="M 600 350 L 910.2 433.6" /><path d="M 600 350 L 860.3 449.6" /><path d="M 600 350 L 802.5 462.6" /><path d="M 600 350 L 738.5 472.2" /><path d="M 600 350 L 670.3 478.0" /><path d="M 600 350 L 600.0 480.0" /><path d="M 600 350 L 529.7 478.0" /><path d="M 600 350 L 461.5 472.2" /><path d="M 600 350 L 397.5 462.6" /><path d="M 600 350 L 339.7 449.6" /><path d="M 600 350 L 289.8 433.6" /><path d="M 600 350 L 249.3 415.0" /><path d="M 600 350 L 219.4 394.5" /><path d="M 600 350 L 201.2 372.6" /><path d="M 600 350 L 195.0 350.0" /><path d="M 600 350 L 201.2 327.4" /><path d="M 600 350 L 219.4 305.5" /><path d="M 600 350 L 249.3 285.0" /><path d="M 600 350 L 289.8 266.4" /><path d="M 600 350 L 339.7 250.4" /><path d="M 600 350 L 397.5 237.4" /><path d="M 600 350 L 461.5 227.8" /><path d="M 600 350 L 529.7 222.0" /><path d="M 600 350 L 600.0 220.0" /><path d="M 600 350 L 670.3 222.0" /><path d="M 600 350 L 738.5 227.8" /><path d="M 600 350 L 802.5 237.4" /><path d="M 600 350 L 860.3 250.4" /><path d="M 600 350 L 910.2 266.4" /><path d="M 600 350 L 950.7 285.0" /><path d="M 600 350 L 980.6 305.5" /><path d="M 600 350 L 998.8 327.4" /></g><text x="600" y="337" class="grid-core">⊕</text><text x="1000" y="372" class="grid-degree">180°</text><text x="195" y="372" class="grid-degree">0°</text></svg><div class="stellar-hud" id="stellarHud"><span class="hud-cross">＋</span><div><strong id="hudPhase">THE MILKY WAY</strong><small id="hudDistance">GALACTIC VIEW · ARTISTIC DATA</small></div><span class="hud-coords">X 00.000<br/>Y 00.000</span></div><div class="cosmic-bottom"><span>THE MILKY WAY · ARTISTIC VISUALIZATION</span><span>SCROLL TO ZOOM &nbsp; + / −</span></div>
+      <div class="galaxy-map-label galaxy-label-one">SIRIUS <span>✦</span></div><div class="galaxy-map-label galaxy-label-two">VEGA <span>✦</span></div><div class="galaxy-map-label galaxy-label-three">SOL <span>✦</span></div>
+      <div id="nearbyStars" aria-hidden="true"><span class="star-pin pin-one">◉ SIRIUS</span><span class="star-pin pin-two">◉ VEGA</span><span class="star-pin pin-three">◉ ALPHA CENTAURI</span><span class="star-pin pin-four">◉ BARNARD'S STAR</span><span class="star-pin pin-five">◉ PROXIMA CENTAURI</span><span class="star-pin pin-six">◉ SOL</span></div>
+      <div class="zoom-hud"><button id="zoomPlus" aria-label="Zoom in">+</button><span>ZOOM</span><button id="zoomMinus" aria-label="Zoom out">−</button></div>
+    </section>
+    <section id="sunScene" class="scene" aria-label="Follow the Sun">
+      <div class="solar-orbit orbit-one"></div><div class="solar-orbit orbit-two"></div><div class="solar-orbit orbit-three"></div>
+      <div class="sun-body" id="sunBody" role="img" aria-label="Animated representation of the Sun"><div class="sun-core"></div></div>
+      <div class="solar-copy"><p class="overline">02 &nbsp; / &nbsp; OUR LITTLE CORNER OF THE COSMOS</p><h2>Follow the<br/><em>light.</em></h2><p>One star. Eight planets. A world full of people who turned breath into music.</p><button id="toEarth" class="journey-cta">FIND OUR PLANET <span>→</span></button></div>
+      <button id="sunEarth" class="orbit-earth" aria-label="Travel from the Sun to Earth">✦<small>EARTH ↗</small></button><span class="solar-label">SOL · OUR SUN</span>
+    </section>
+    <section id="earthScene" class="scene" aria-label="Visit the Earth">
+      <div class="planet-interaction">
+        <button id="earthButton" class="earth-button" aria-label="Click Earth to enter the Carnatic story">
+          <svg viewBox="0 0 360 360" aria-hidden="true" class="earth-art"><defs><radialGradient id="earthSea" cx="30%" cy="27%" r="80%"><stop offset="0%" stop-color="#5ab6df"/><stop offset="34%" stop-color="#12598e"/><stop offset="76%" stop-color="#052046"/><stop offset="100%" stop-color="#020c20"/></radialGradient><radialGradient id="earthLight" cx="24%" cy="30%" r="75%"><stop stop-color="#d7f9ff" stop-opacity=".64"/><stop offset=".56" stop-color="#b5ffff" stop-opacity="0"/><stop offset="1" stop-color="#03122a" stop-opacity=".8"/></radialGradient><clipPath id="earthClip"><circle cx="180" cy="180" r="151"/></clipPath></defs><circle cx="180" cy="180" r="163" fill="none" stroke="#7ac9ff" stroke-opacity=".15" stroke-width="2"/><g clip-path="url(#earthClip)"><circle cx="180" cy="180" r="151" fill="url(#earthSea)"/><g fill="#5f9874" opacity=".91"><path d="M99 57 Q132 63 152 84 L171 94 L165 114 L143 125 L150 144 L127 160 L119 187 L94 198 L87 175 L62 159 L72 124 L58 102Z"/><path d="M153 174 Q176 158 198 180 L202 208 L190 242 L177 273 L155 306 L143 272 L149 245 L131 220Z"/><path d="M201 86 Q236 61 268 70 L302 100 L297 129 L278 131 L266 162 L247 176 L225 159 L215 135 L193 119Z"/><path d="M230 171 L265 165 L283 190 L273 226 L246 257 L229 239 L233 206Z"/><path d="M290 246 Q325 235 346 257 L338 290 L302 297 L288 277Z"/></g><g fill="#d2d0a6" opacity=".56"><path d="M137 117 L158 125 L151 145 L130 150Z"/><path d="M250 173 L274 194 L261 222 L248 236 L237 208Z"/></g><g fill="none" stroke="#d3effc" opacity=".56" stroke-width="8" stroke-linecap="round"><path d="M45 101 Q95 113 132 96 T219 116"/><path d="M119 224 Q179 197 206 220 T301 229"/><path d="M220 87 Q256 104 288 92"/><path d="M89 289 Q132 274 158 285"/></g><circle cx="180" cy="180" r="151" fill="url(#earthLight)"/></g></svg>
+          <span class="earth-glint"></span>
+        </button>
+        <div class="earth-pointer">✦ <span>CLICK EARTH TO BEGIN</span></div>
+      </div>
+      <div class="earth-copy"><p class="overline">03 &nbsp; / &nbsp; THE BLUE PLANET</p><h2>Somewhere on<br/>this little planet,<br/><em>we began to sing.</em></h2><p>Come closer. Our story begins in South India.</p><button id="enterStory" class="journey-cta">ENTER THE STORY <span>→</span></button></div>
+      <div class="earth-lower">EARTH · AN ARTISTIC RENDERING, NOT A SCALE MODEL</div>
+    </section>
+
+    <section id="story" class="scene story-scene" aria-label="Musical story slideshow">
+      <div class="story-decoration" aria-hidden="true"><div class="orb-ring r1"></div><div class="orb-ring r2"></div><div class="orb-ring r3"></div><div class="ornament-note" id="ornamentNote">♪</div></div>
+      <div class="slide" data-slide="0"><div class="slide-copy"><p class="overline">EARTH / SOUTH INDIA / A LIVING TRADITION</p><h2>Who invented<br/><em>Carnatic music?</em></h2><p class="lead">Here's the surprising part: <strong>there is no single known inventor.</strong></p><p>But meet <strong>Purandara Dasa</strong> (c. 1484–1564), traditionally called the <i>father of Carnatic music</i> for helping organize the graded exercises singers still learn today. He shaped a way of teaching an already centuries-old tradition.</p><button class="subtle-link" id="historyMore">WHY THOSE EXERCISES? ↗</button></div><div class="person-visual"><span class="person-halo"></span><div class="portrait-vessel purandara-portrait"><img class="purandara-photo" src="assets/purandara-dasa.png" alt="Traditional artistic depiction of Purandara Dasa" onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"/><div class="portrait-fallback" hidden><span>P</span><b>Purandara Dasa</b><small>traditional portrait unavailable</small></div></div><span class="portrait-caption">PURANDARA DASA · TRADITIONALLY CREDITED WITH SYSTEMATIZING BEGINNER LESSONS</span></div></div>
+      <div class="slide" data-slide="1"><div class="slide-copy"><p class="overline">AN EIGHT-HUNDRED-YEAR QUESTION? OLDER STILL.</p><h2>Seven swaras.<br/><em>Endless possibilities.</em></h2><p class="lead">Sa · Ri · Ga · Ma · Pa · Dha · Ni</p><p>Why practise the same notes over and over? Sarali Varisai develops pitch awareness; repeated-note exercises build control; rhythmic exercises train timing. Not magic changes to your vocal cords—learned coordination between listening, breathing and singing.</p><button id="playSeven" class="subtle-link">♪ HEAR THE SEVEN NOTES</button></div><div class="sound-constellation" id="soundConstellation"><div class="con-line"></div></div></div>
+      <div class="slide" data-slide="2"><div class="slide-copy centered"><p class="overline">HERE'S WHERE THINGS GET RIDICULOUS</p><h2>Did you know<br/>singing is <em>math?</em></h2><p class="lead">I know. You didn't ask for maths today.</p><p>But your voice produces frequencies, your melody moves between ratios, and your taala counts time in cycles.</p><div class="formula-teaser">f<sub>higher Sa</sub> = 2 × f<sub>Sa</sub><span>ONE OCTAVE. DOUBLE THE VIBRATION.</span></div><button id="goStudio" class="launch-button">SING SOMETHING. I'LL PROVE IT. <span>↗</span></button><button id="exploreFamousIntro" class="subtle-link song-fastlane">OR DECODE A FAMOUS SONG ↗</button></div></div>
+      <div class="slide" data-slide="3"><div class="studio-top observatory-heading"><p class="overline">THE OBSERVATORY / YOUR VOICE IS THE TELESCOPE</p><h2>Make a sound.<br/><em>Watch the universe appear.</em></h2><p>No textbooks. No guessing. Watch real measurements grow out of your voice, one vibration at a time.</p></div>
+        <div class="voice-observatory" id="voiceObservatory">
+          <div class="observatory-visual">
+            <div class="observatory-heading-row"><span><i class="signal-light"></i> <span id="observatoryStatus">AWAITING YOUR VOICE</span></span><span>SONIC UNIVERSE · LIVE</span></div>
+            <div class="cosmic-viz-container"><canvas id="voiceUniverse" width="900" height="510" aria-label="Generative universe reacting to your singing"></canvas><div class="cosmic-viz-overlay"><span id="orbitalSwara">SA?</span><small id="orbitalReadout">YOUR FIRST NOTE STARTS EVERYTHING</small></div><span class="cosmic-viz-corner">VOICE → FREQUENCY → VIBRATION → LIGHT</span></div>
+            <div class="observatory-controls"><button id="mainRecordCTA" class="main-record-cta">● SING INTO THE UNIVERSE</button><button id="mainExampleCTA" class="main-ghost-cta">♫ TRY SA RI GA</button><button id="mainUploadCTA" class="main-ghost-cta">↑ UPLOAD AUDIO</button></div>
+            <p class="voice-note">Start by sustaining your Sa, then sing a phrase. This detects *pitch*, not spoken syllables. Use the calibration control below when your starting note isn't Sa.</p>
+          </div>
+          <div class="observatory-maths">
+            <div class="maths-panel-title"><span>THE MATHEMATICS OF YOUR VOICE</span><b>LIVE PHYSICS</b></div>
+            <div class="live-frequency-row"><span>FUNDAMENTAL FREQUENCY</span><strong id="obsHz">— <small>Hz</small></strong></div>
+            <div class="live-measures"><div><span>VIBRATION PERIOD</span><strong id="obsPeriod">— ms</strong><small>T = 1/f</small></div><div><span>SOUND WAVELENGTH¹</span><strong id="obsLambda">— m</strong><small>λ = v/f (air at 20°C)</small></div></div>
+            <div class="equation-feature"><span>YOUR NOTE AS AN EQUATION</span><div class="massive-equation" id="obsRatio">f / fₛₐ = —</div><p id="obsEquationDetail">Frequency ratio from your chosen Sa. A note's pitch is relative to its tonic.</p></div>
+            <div class="harmonic-lab"><div class="harmonic-title"><span>HARMONIC FINGERPRINT</span><span id="obsHarmonicStatus">SOUND → SPECTRUM</span></div><canvas id="obsHarmonics" width="610" height="135" aria-label="Observed harmonic spectrum"></canvas><p>Colored peaks represent measured spectral energy near whole-number multiples of your fundamental frequency.</p></div>
+            <div class="maths-challenge" id="mathsChallenge">Sing a higher note. Does its frequency go up? What happens to the wavelength?</div>
+          </div>
+        </div>
+        <div class="live-pitch-rail"><div class="rail-heading"><b>YOUR MELODY, IN REAL TIME</b><span id="pitchRailHint">PITCH CONTOUR · Hz AGAINST TIME</span></div><canvas id="liveMelody" width="1600" height="245" aria-label="Live pitch line as singing progresses"></canvas><div class="rail-footer"><span>LOWER PITCH</span><span>YOUR TIME →</span><span>HIGHER PITCH</span></div></div>
+        <div class="studio-workbench-label"><h3>Keep exploring</h3><p>Set your Sa, choose a guided verse, or bring in a taala recording to layer rhythm over melody.</p></div>
+        <div class="studio-grid"><div class="studio-console"><div class="meter-head"><span id="recordStatus"><span class="dot"></span> READY TO LISTEN</span><span id="recordTimer">00:00</span></div><canvas id="liveWave" width="680" height="100"></canvas><div class="big-detected"><span id="liveName">SA?</span><small id="liveFrequency">YOUR NOTE WILL APPEAR HERE</small></div><div class="studio-actions"><button id="recordBtn" class="primary-action">● RECORD VOICE</button><label class="secondary-action">↑ UPLOAD AUDIO<input id="audioFile" type="file" accept="audio/*" hidden/></label></div><div class="sa-control"><label for="saControl">REFERENCE SA: <strong id="saValue">240 Hz</strong></label><input id="saControl" type="range" min="110" max="400" value="240" step="1"/><button id="hearSa" class="mini-action">♫ HEAR SA</button><button id="calibrateSa" class="mini-action">◉ CALIBRATE BY SINGING SA</button></div><div class="swara-scale-picker"><label for="swaraScale">SWARA REFERENCE / RAGA</label><select id="swaraScale"><option value="mayamalavagowla">Mayamalavagowla · R₁ G₃ D₁ N₃</option><option value="shankarabharanam">Shankarabharanam · R₂ G₃ D₂ N₃</option><option value="kharaharapriya">Kharaharapriya · R₂ G₂ D₂ N₂</option></select><small id="swaraScaleExplain">The same sung frequency can receive different swara labels depending on the raga. Pick the scale you are practising.</small></div><label class="tonic-first"><input id="assumeFirstSa" type="checkbox" checked/> My phrase starts on Sa (use its first steady note as the tonic)</label><p class="studio-hint" id="studioHint">Sing a sustained Sa first for calibration, then sing your phrase. Pitch detection measures notes, not spoken syllables.</p></div>
+        <div class="studio-side"><h3>Don't know what to sing?</h3><p>Start here. We won't pretend a synthesized example is your voice.</p><div class="examples" id="examples"></div><div class="tala-upload"><div class="tala-title">◉ YOUR TAALA</div><p>Record your hand movements or upload a taala video. Mark beats while it plays to align the rhythm with your phrase.</p><div class="taala-actions"><button id="cameraToggle" class="mini-action">◉ LIVE CAMERA</button><label class="mini-action">↑ TAALA VIDEO<input id="talaVideoFile" type="file" accept="video/*" hidden/></label><button id="tapBeat" class="mini-action">✳ MARK BEAT</button></div><video id="talaVideo" autoplay muted playsinline controls hidden></video><div class="beat-orbit" id="beatOrbit" aria-label="Eight beat Adi tala cycle"></div><div class="beat-status"><span id="beatCount">BEAT 1 / 8</span><span id="beatStats">NO BEATS MARKED</span></div><div class="sync-control"><label for="syncOffset">VIDEO ↔ AUDIO START OFFSET: <span id="syncLabel">0.0 s</span></label><input id="syncOffset" type="range" min="-5" max="5" step="0.1" value="0"/><small>Align the video and audio manually if their recordings do not start together.</small></div></div></div></div>
+      </div>
+      <div class="slide" data-slide="4"><div class="results-intro cosmos-results-intro"><p class="overline">YOUR SONG / A SCIENTIFIC DISCOVERY</p><h2>You've just sung<br/><em>an equation.</em></h2><p id="resultDescriptor">Your voice has been transformed into a musical map you can explore.</p></div>
+      <div class="signal-audit" id="signalAudit" aria-live="polite">
+        <div class="signal-audit-title"><span>◉ SIGNAL CHECK</span><strong id="auditBadge">AWAITING SOUND</strong></div>
+        <div class="signal-audit-grid"><div><small>VOICED AUDIO FRAMES</small><strong id="auditVoiced">—</strong></div><div><small>NEAR SELECTED SCALE</small><strong id="auditOnScale">—</strong></div><div><small>SWARA REFERENCE</small><strong id="auditScale">—</strong></div><div><small>TONIC</small><strong id="auditTonic">—</strong></div></div>
+        <div class="audit-quick-scale"><label for="resultScalePicker">TRY ANOTHER SWARA REFERENCE:</label><select id="resultScalePicker"><option value="mayamalavagowla">Mayamalavagowla</option><option value="shankarabharanam">Shankarabharanam</option><option value="kharaharapriya">Kharaharapriya</option></select><span>Reinterprets the same recorded pitches; it does not change your audio.</span></div><p id="auditAdvice">The results are estimates, not speech recognition. A clear solo voice and correct Sa make the biggest difference.</p>
+      </div>
+      
+      <section class="math-projection" aria-label="Interactive mathematical portrait of your recording">
+        <header class="math-projection-head"><span>✦ THE UNIVERSE INSIDE YOUR VOICE</span><span class="math-source" id="mathSourceTag">WAITING FOR A NOTE</span></header>
+        <div class="math-projection-grid">
+          <div class="math-projection-copy">
+            <span class="math-tiny-overline" id="mathSwaraTag">SELECT A SWARA</span>
+            <div class="math-eq-bloom" id="mathEqBloom">fₙ ÷ fₛₐ</div>
+            <div class="math-equation-real" id="mathEqReal">Choose a note to discover its ratio.</div><button class="hear-note" id="hearSelectedNote" type="button">♫ HEAR THIS NOTE</button>
+            <p id="mathProse">The microphone measures the fundamental pitch. From that value, physics and mathematics let us calculate the distance between notes, the vibration period and the corresponding wavelength.</p>
+          </div>
+          <div class="math-wave-art">
+            <div class="math-art-top"><span>ACOUSTIC GEOMETRY</span><span>WAVES VISUALIZED AT A SLOWER SCALE</span></div>
+            <svg id="mathWaveCompare" viewBox="0 0 700 280" aria-label="Illustrative sine waves showing tonic and selected note frequency ratios"></svg>
+            <div class="wave-legend"><span><i class="legend-sa"></i> YOUR SA</span><span><i class="legend-note"></i> SELECTED NOTE</span></div>
+          </div>
+        </div>
+        <div class="math-projection-metrics">
+          <div><span>ACTUAL / MODEL FREQUENCY</span><strong id="mathMetricFrequency">— Hz</strong><small>fundamental pitch f₀</small></div>
+          <div><span>THE DISTANCE</span><strong id="mathMetricCents">— cents</strong><small>1200 · log₂(f / Sa)</small></div>
+          <div><span>ONE VOCAL VIBRATION</span><strong id="mathMetricPeriod">— ms</strong><small>1000 / frequency</small></div>
+          <div><span>ONE SOUND WAVE IN AIR</span><strong id="mathMetricWave">— m</strong><small>343 / frequency · illustrative</small></div>
+        </div>
+        <p class="math-data-disclaimer" id="mathDataDisclaimer">Audio-derived fundamental pitches and calculated acoustic relationships are not the same as directly observing vocal-fold motion. The wave illustration is deliberately slowed and normalized.</p>
+      </section>
+<div class="mathematical-reveal"><div class="reveal-equation"><span class="reveal-kicker">01 / THE MATH</span><div class="result-hero-equation" id="resultHeroFormula">f₂ / f₁ = —</div><p id="resultHeroExplain">Select any swara to discover the exact ratio measured from your performance.</p><div class="formula-drawer">CENTS = 1200 × log₂(f₂ / fₛₐ)</div></div><div class="reveal-harmonics"><span class="reveal-kicker">02 / THE PHYSICS</span><canvas id="resultHarmonics" width="720" height="215" aria-label="Harmonic frequencies for selected note"></canvas><p id="resultPhysicsLine">A note contains a fundamental frequency and higher harmonics. Watch their relationship.</p></div></div><div class="results-grid"><div class="graph-box"><div class="box-label">PITCH CONSTELLATION · FUNDAMENTAL FREQUENCY OVER TIME</div><div class="pitch-graph" id="pitchGraph"><div class="empty-note">Record or choose an example to generate your musical map.</div></div><div class="note-events" id="noteEvents"></div><p class="graph-instruction">SELECT A NOTE ON THE GRAPH OR IN THE NOTE STRIP TO EXPLORE ITS EQUATION ↗</p></div><div class="eq-box"><div class="box-label">THE EQUATION IN YOUR VOICE</div><div class="eq-live" id="equationLive">f₂ / f₁</div><div class="eq-explain" id="equationExplain">Click any swara below the graph to see its measured frequency ratio, musical interval, and physics.</div><div class="stat-row"><div><span>TONIC SA</span><b id="statSa">240 Hz</b></div><div><span>PHRASE</span><b id="statDuration">—</b></div><div><span>DETECTED</span><b id="statNotes">—</b></div></div></div></div><section class="three-reveals" aria-label="Your recording in three sciences"><div><span>01 / MATH YOU CAN VERIFY</span><strong id="mathDiscovery">fₙ ÷ Sa</strong><p id="mathDiscoveryCopy">Your measured pitch divided by your reference Sa.</p></div><div><span>02 / SOUND PHYSICS</span><strong id="physicsDiscovery">T = 1 / f</strong><p id="physicsDiscoveryCopy">How many seconds one vibration lasts.</p></div><div><span>03 / HIDDEN PATTERNS</span><strong id="motifDiscovery">Searching…</strong><p id="motifDiscoveryCopy">Repeated melodic patterns are highlighted when found.</p></div></section><div class="science-selector"><button data-science="physics" class="selected">∿ PHYSICS</button><button data-science="voice">◉ VOICE SCIENCE</button><button data-science="math">∑ MATHEMATICS</button><button data-science="tala">◷ TAALA</button><button data-science="history">⌛ HISTORY</button><button data-science="learning">✳ WHY PRACTISE?</button></div><div class="science-copy" id="scienceCopy"></div><div class="science-constellations" id="scienceCards"><div><span>MATHEMATICS</span><strong>f₂ / f₁</strong><p>How far the notes travel from Sa.</p></div><div><span>ACOUSTICS</span><strong>fₙ = n × f₀</strong><p>Why sound comes with harmonics.</p></div><div><span>PHYSIOLOGY</span><strong>BREATH → SOUND</strong><p>How your voice forms a note.</p></div></div><div class="results-actions"><button id="playResult" class="mini-action">♪ PLAY THE PHRASE</button><button id="exportJson" class="mini-action">↓ EXPORT MY MATH</button><button id="newTake" class="mini-action">↺ SING AGAIN</button><button id="exploreFamousResults" class="mini-action">✦ DECODE FAMOUS SONGS</button></div></div>
+      <div class="slide song-discovery-slide" data-slide="5">
+  <div class="song-discovery" id="songDiscovery">
+    <div class="songs-cosmos-backdrop" aria-hidden="true"><div class="song-orbit-outer"></div><div class="song-orbit-inner"></div><span>♪</span><span>✧</span><span>♫</span></div>
+    <header class="songs-headline">
+      <p class="overline">THE SONG ATLAS / EXPLORE THE GREATS</p>
+      <h2>Famous songs.<br/><em>Hidden equations.</em></h2>
+      <p>Want to explore some of Carnatic music's best-known compositions? Choose one, tap its swaras and uncover the pitch ratios, physics, history and eight-beat rhythm underneath.</p>
+    </header>
+    <div class="song-atlas-main">
+      <nav class="song-picker" id="songPicker" aria-label="Choose a composition"></nav>
+      <section class="song-analysis" aria-live="polite">
+        <div class="song-analysis-top"><div><span class="songs-eyebrow">NOW EXPLORING</span><h3 id="songTitle">Bhagyada Lakshmi Baramma</h3><p id="songSubtitle"></p></div><div class="song-counter" id="songCounter">01 / 04</div></div>
+        <div class="song-stats"><div><span>COMPOSER</span><strong id="songComposer">—</strong></div><div><span>RAGA / RENDITION</span><strong id="songRaga">—</strong></div><div><span>TAALA</span><strong id="songTala">—</strong></div></div>
+        
+        <section class="featured-recording" id="featuredRecording" aria-label="Listen to M. S. Subbulakshmi's recording">
+          <div class="featured-visual"><div class="featured-disc"><span>♪</span></div><div class="featured-orbit"></div></div>
+          <div class="featured-copy"><span class="songs-eyebrow">THE ACTUAL PERFORMANCE / VERIFIED OFFICIAL SOURCE</span><h4>Hear M. S. Subbulakshmi sing it.</h4><p><b>Bhagyada Lakshmi Baramma</b> — M. S. Subbulakshmi with Radha Viswanathan. Presented by Saregama Carnatic Classical.</p><div class="featured-actions"><a id="playOfficialVideo" class="official-video-link" href="https://www.youtube.com/watch?v=zmHsP1CN_aA" target="_blank" rel="noopener noreferrer">▶ HEAR THE ORIGINAL RECORDING ↗</a></div><small>The official Saregama performance opens on YouTube. It is not packaged into this website. Pause it before using the microphone.</small></div>
+        </section>
+<div class="song-variation" id="songVariationWrap"><label for="songVariation">Explore a commonly performed raga setting</label><select id="songVariation"><option value="madhyamavati">Madhyamavati</option><option value="sri">Sri</option></select></div>
+        <div class="song-tonic-control"><label for="songTonic">YOUR SA <strong id="songTonicValue">240 Hz</strong></label><input type="range" id="songTonic" min="120" max="400" value="240" step="1"/><span>Change the tonic. The frequency equations update without changing the raga's relative intervals.</span></div>
+        
+        <section class="song-math-cosmos" aria-label="Interactive visual mathematics of the selected swara">
+          <div class="song-math-label"><span>✧ 03 / THE MATHEMATICS OF A RAGA</span><span>ILLUSTRATIVE TUNING MODEL · NOT ANALYSIS OF THE RECORDING</span></div>
+          <div class="song-math-stage-grid">
+            <div class="song-math-main-number"><span id="songMathSwara">SA / THE TONIC</span><strong id="songMathHero">1.000<span>× Sa</span></strong><div class="song-math-derivation" id="songMathDerivation">240 × 2^(0/12) = 240 Hz</div><p id="songMathInsight">A note's pitch is a ratio relative to the chosen Sa. Select the glowing swaras in the pitch constellation to explore the equations.</p></div>
+            <div class="song-math-wave-stage"><svg id="songMathWave" viewBox="0 0 700 235" role="img" aria-label="Two conceptual pitch waves representing the tonic and selected swara"></svg><div class="song-wave-legend"><span>— Sa</span><span>— selected swara</span></div></div>
+          </div>
+          <div class="song-math-bottom"><span id="songMathCents">0 cents above Sa</span><span id="songMathSoundPhysics">The harmonic series follows fₙ = n · f₀.</span></div>
+        </section>
+<div class="song-note-cosmos"><div class="song-note-title"><span>THE RAGA'S PITCH CONSTELLATION</span><span id="songRiseLabel">A SHORT SCALE SKETCH, NOT THE ORIGINAL SONG</span></div><svg id="songScale" viewBox="0 0 820 245" role="img" aria-label="Raga pitch constellation with clickable note points"></svg><div id="songSwaraButtons" class="song-note-pills"></div><div id="songDescent" class="song-descent-explainer"></div></div>
+        <div class="song-math-grid">
+          <div class="song-math-hero"><span class="songs-eyebrow">THE EQUATION BEHIND THIS SWARA</span><div class="song-big-equation" id="songEquation">f = 240 × 2⁰</div><p id="songEquationDetail">Tap a swara to see the relationship.</p><div class="song-equation-metrics"><div><small>FREQUENCY</small><b id="songHz">240 Hz</b></div><div><small>PERIOD</small><b id="songPeriod">4.17 ms</b></div><div><small>WAVELENGTH</small><b id="songWavelength">1.43 m</b></div></div></div>
+          <div class="song-tala-card"><span class="songs-eyebrow">THE RHYTHM / ADI TAALA</span><div class="song-tala-content"><div class="song-beat-orbit" id="songBeatOrbit" aria-label="Eight-beat tala orbit"></div><div class="song-tala-info"><div class="song-tala-count" id="songTalaCount">8 × 4 = 32</div><p id="songTalaDescription">Eight aksharas, four subdivisions each. An orbit made of rhythm.</p><label for="songNadai">NADAI</label><select id="songNadai"><option value="3">Tisra — 3</option><option value="4" selected>Chatusra — 4</option><option value="5">Khanda — 5</option><option value="7">Misra — 7</option><option value="9">Sankirna — 9</option></select><button id="songPlayBeats" class="song-mini-button">▶ HEAR THE CYCLE</button></div></div></div>
+        </div>
+        <div class="song-story-bottom"><div><span class="songs-eyebrow">THE STORY / WHAT WE CAN VERIFY</span><p id="songStory"></p><a id="songSource" href="#" rel="noopener noreferrer" target="_blank">READ HISTORICAL / MUSICAL SOURCE ↗</a></div><div><span class="songs-eyebrow">WHY SINGERS LEARN FROM THIS</span><p id="songPractice"></p></div></div>
+        <div class="song-analysis-actions"><button id="songPlayScale" class="song-primary-button">♫ HEAR THE RAGA'S SWARAS</button><button id="songGoRecord" class="song-secondary-button">◉ SING OR UPLOAD YOUR VERSION</button></div>
+        <p class="song-integrity-note">The synthesized sound illustrates the raga's swara positions; it is <b>not the original composition or a copyrighted recording</b>. Pitches use equal-tempered reference ratios for comparison, not fixed universal Carnatic intonation. Actual vocal analysis happens in the singing observatory.</p>
+      </section>
+    </div>
+  </div>
+</div>
+      <div class="slide" data-slide="6"><div class="final-slide"><p class="overline">ONE LAST THING</p><h2>You started with<br/><em>a song.</em><br/>You found<br/>a universe.</h2><p>Math describes its intervals. Physics explains its vibrations. Biology gives it a voice. History gives it a story. Rhythm gives it a home.</p><div class="mini-discoveries"><button id="vowelExperiment">WHY DOES “AA” SOUND DIFFERENT FROM “EE”? ↗</button><button id="rhythmExperiment">TRY AN EIGHT-BEAT ORBIT ↗</button><button id="restartJourney">↺ TRAVEL AGAIN</button></div><div class="final-constellation" id="finalConstellation" aria-hidden="true">✦ &nbsp; ♪ &nbsp; ✧ &nbsp; ♫ &nbsp; ✦</div></div></div>
+      <div class="story-controls"><button id="backSlide" aria-label="Previous slide">← <span>BACK</span></button><div class="progress-wrap"><span id="chapterCounter">01 / 07</span><div class="progress-track"><span id="progressFill"></span></div></div><button id="nextSlide"><span>NEXT</span> →</button></div>
+    </section>
+  </main>
+  <dialog id="infoDialog"><button id="dialogClose" class="dialog-close" aria-label="Close dialog">✕</button><div id="dialogContent"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <footer class="bottom-credit"><span>A LITTLE EXPERIMENT ABOUT A BIG IDEA</span><span>ORIGINAL ARTISTIC GALAXY · ALL AUDIO STAYS IN YOUR BROWSER</span></footer>
+</body>
+</html>
