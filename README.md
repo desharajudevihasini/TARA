@@ -1,84 +1,208 @@
-FINAL DEPLOY NOTES
-- Microphone/camera testing should be done from the local server URL opened by START_MAC.command (localhost), not from a file:// page.
-- The featured tribute music is M. S. Subbulakshmi only, controlled from the top-right button; there is no large popup or visible video.
+# ✦ TĀRA
+### The Universe Inside a Note
 
-# TĀRA — The Universe Inside a Note
+**An immersive journey through Carnatic music, mathematics, physics, and the human voice.**
 
-**A cinematic, interactive exploration of the mathematics, physics, voice science, and cultural history of Carnatic music.**
+*What if you could see the mathematics hiding inside a melody?*
 
-This edition retains the galaxy → Sun → Earth → Carnatic story → singing observatory → mathematical reveal → famous-song atlas. The math section is based on estimated pitch values from *your* voice, not a randomly generated “song equation.”
+TĀRA is an interactive web experience that transforms sound into something you can explore.
 
-## Open on your Mac
+It begins among billions of stars. You travel through a galaxy, approach the Sun, discover Earth, and arrive at one of the world's richest musical traditions: **Carnatic music**.
 
-1. Unzip the download.
-2. Open the **TARA-Showcase-Polished** folder.
-3. Right-click `START_MAC.command` → **Open**.
-4. The launcher opens an isolated URL beginning `http://127.0.0.1:55870/`, choosing the next free port if busy. **Use the new tab**; older `localhost:5173` tabs may show outdated builds.
-5. In the galaxy, choose **Play M. S. Subbulakshmi** to open the *official* Saregama YouTube rendition of “Bhagyada Lakshmi Baramma.” You may need to press ▶ inside YouTube's video and have internet access.
-6. Reach the singing observatory, then use **Try Sa Ri Ga** as a working offline demo before testing microphone input.
+Then the experience becomes personal.
 
-Alternative from the extracted folder:
+You sing. TĀRA listens. Your voice becomes a moving constellation of frequencies, swaras, harmonics, and mathematical relationships.
+
+**One voice. Seven swaras. An entire universe of patterns.**
+
+---
+
+## ✧ Not just a website. A journey.
+
+### 01 — Somewhere in the universe
+
+Your journey begins in a cinematic, interactive galaxy.
+
+Explore the starfield, orbit through space, travel toward the Sun, and find Earth.
+
+The universe isn't just a visual introduction. It sets up the central idea of TĀRA: **the same physics that describes waves throughout nature also helps us understand musical sound.**
+
+### 02 — Where music meets history
+
+Discover the origins and evolution of Carnatic music.
+
+Meet **Purandara Dasa**, traditionally known as the father of Carnatic music for his contributions to structured music education.
+
+Explore how foundational exercises helped generations of students learn pitch, rhythm, and melodic patterns.
+
+Music wasn't invented by one person. It's a living tradition shaped across centuries.
+
+### 03 — Sing into the universe
+
+This is where TĀRA becomes an instrument of discovery.
+
+Turn on your microphone and sing a note or melody.
+
+TĀRA analyzes the incoming audio and visualizes:
+
+- **Fundamental frequency** — the estimated pitch of your voice in hertz.
+- **Swaras** — tonic-relative note estimates based on your selected reference.
+- **Pitch contours** — how your melody moves over time.
+- **Harmonics** — frequency components that help give your voice its character.
+- **A reactive sound universe** — cosmic visuals that respond to what you sing.
+
+You can calibrate your own **Sa**, experiment with different swara references, and explore the mathematical structure of a recorded phrase.
+
+### 04 — Your voice is an equation
+
+Every musical note is a physical vibration.
+
+TĀRA connects the sounds you make to the mathematics behind them.
+
+**Frequency and period**
+
+`T = 1 / f`
+
+How much time passes during one complete vibration?
+
+**Wavelength**
+
+`λ = v / f`
+
+How far does a sound wave travel during one cycle?
+
+**Musical intervals**
+
+`r = f₂ / f₁`
+
+Why does doubling a frequency produce a note one octave higher?
+
+**Pitch distance**
+
+`cents = 1200 × log₂(f₂ / f₁)`
+
+How can we measure the distance between two pitches?
+
+Instead of simply displaying formulas, TĀRA lets you investigate these relationships through actual sound.
+
+### 05 — Famous songs, decoded
+
+Explore the musical ideas behind four celebrated Carnatic compositions:
+
+| Composition | Raga |
+|---|---|
+| Bhagyada Lakshmi Baramma | Madhyamavati / Sri settings |
+| Vatapi Ganapatim | Hamsadhwani |
+| Nagumomu Ganaleni | Abheri |
+| Endaro Mahanubhavulu | Sri |
+
+Each interactive exploration includes musical context, swara relationships, frequency calculations, and synthesized scale examples.
+
+The goal is not just to listen to music, but to understand some of the patterns that make it work.
+
+### 06 — Rhythm is mathematics too
+
+TĀRA also explores **taala**, the rhythmic framework of Carnatic music.
+
+Use your camera or upload a video, mark beats, and investigate how rhythmic cycles relate to timing and melodic movement.
+
+The current prototype uses **manual beat annotation**, rather than automated gesture recognition.
+
+### 07 — A tribute to a legendary voice
+
+The experience pays tribute to **M. S. Subbulakshmi and Radha Viswanathan**, featuring the official Saregama recording of *Bhagyada Lakshmi Baramma* as its musical reference.
+
+The copyrighted recording is not distributed with the source code. External playback depends on YouTube availability and browser restrictions.
+
+---
+
+## ⚙️ Under the hood
+
+TĀRA combines interactive graphics, browser audio processing, and musical mathematics.
+
+| Technology | What it does |
+|---|---|
+| HTML5, CSS3 | Interface, visual design, transitions, responsive layouts |
+| JavaScript | Interactive storytelling and application logic |
+| Canvas & WebGL | Cosmic environments and reactive visualizations |
+| Web Audio API | Microphone capture and audio analysis |
+| Digital Signal Processing | Fundamental pitch estimation and frequency analysis |
+| Mathematical Modeling | Pitch ratios, note intervals, periods, wavelengths |
+| MediaDevices API | Browser microphone and camera access |
+| GitHub Pages | Static website deployment |
+
+### How the voice analysis works
+
+```text
+        YOUR VOICE
+            │
+            ▼
+     Microphone Input
+            │
+            ▼
+    Audio Signal Analysis
+            │
+            ▼
+     Pitch Estimation
+            │
+            ▼
+    Sa / Swara Mapping
+            │
+            ▼
+    Mathematical Analysis
+            │
+            ▼
+   Interactive Visualizations
+            │
+            ▼
+     YOUR MUSICAL UNIVERSE
+```
+
+The pitch-analysis system estimates fundamental frequency from audio signals, groups stable pitch regions, and maps them relative to a chosen tonic.
+
+Because real Carnatic performances contain gamakas, expressive pitch movement, and variable intonation, the results are estimates rather than definitive musical transcriptions.
+
+---
+
+## 🚀 Explore TĀRA locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/desharajudevihasini/TARA.git
+cd TARA
+```
+
+Start the local server:
 
 ```bash
 python3 serve_tara.py
 ```
 
-Windows: use `START_WINDOWS.bat` (Python 3 required). No npm or paid APIs.
+Open the localhost address displayed in your terminal.
 
-## The improved singing workflow
+For the best experience, use a modern browser, headphones, and a quiet room when testing the microphone.
 
-- **Set your tonic Sa** by singing a sustained Sa using **Calibrate by singing Sa**, or explicitly check “My phrase starts on Sa” if it really does. Otherwise uncheck and set the reference slider.
-- **Select a swara reference**: Mayamalavagowla, Shankarabharanam, or Kharaharapriya. The same frequency may be interpreted differently in different ragas. These options use equal-tempered comparison targets, **not** a universal Carnatic tuning standard.
-- **Record a solo phrase** or **upload an audio file**. The estimator filters unclear sections and groups stable frequencies into note events. It analyzes *pitch*, not whether you pronounced the syllables “Sa Ri Ga.”
-- Inspect **Signal Check**: voiced-frame coverage, proximity to the chosen scale, tonic, and suggested next steps when the results are uncertain.
-- Click any note on the enlarged graph or in the note strip: the equation, ratio in cents, vibration period, wavelength, and three science insight panels update. **Hear This Note** plays the selected measured pitch as a synthesized tone.
-- Change the scale directly in the results and see the same recorded pitches reinterpreted. Guided examples retain their own demonstration scale.
-- **Taala**: camera preview or uploaded video and **manual** beat marking; manually adjust the sync offset so beat markers appear over the pitch graph. This build **does not automatically recognize taala gestures**.
-- Export JSON containing frames, tonic, selected scale and signal quality for reproducibility.
+**Note:** Microphone and camera access require HTTPS or a secure localhost context. Browser permission is requested before recording.
 
-## Musical tribute / rights
+---
 
-The sole featured track is **“Bhagyada Lakshmi Baramma” performed by M. S. Subbulakshmi and Radha Viswanathan**, streamed from the official Saregama YouTube recording: <https://www.youtube.com/watch?v=zmHsP1CN_aA>. Their copyrighted master audio is **not redistributed** in the repository. The player stays compact at the top right and closes before on-site microphone or imported-audio analysis. An independently opened YouTube tab cannot be controlled by the website.
+## ✦ Why I built this
 
-There is **no narration**, generic ambient soundtrack, or alternate automatic soundtrack. Browsers and YouTube may block third-party autoplay or embeds.
+Music is something we usually feel before we try to understand it.
 
-## Equations: where they come from
+But behind every melody is a world of vibrations, mathematical relationships, carefully learned patterns, and centuries of human creativity.
 
-- **Measured/estimated** from audio: fundamental frequency `f₀`, pitch contour, note event durations, and, when a real buffer is available, spectral energy near harmonic frequencies.
-- **Calculated** from frequency: relative ratio `r = f_note / f_Sa`; interval `cents = 1200 log₂(r)`; vibration period `T = 1 / f₀`; approximate wavelength in air `λ ≈ 343 / f₀` meters at about 20°C.
-- **Schematic**: slowed-down sine waves and orbit visuals, not direct measurements of vocal fold shape or a physical representation of the entire universe.
-- **Musical theory**: Adi Taala in the common 4 + 2 + 2 form, subdivisions and modular arithmetic; no claim that one equation explains an entire composition.
+I wanted to explore that intersection without turning music into a textbook.
 
-There is **no single known inventor of Carnatic music**. Purandara Dasa is traditionally associated with systematizing graded teaching exercises, not inventing the musical tradition. The famous-song atlas uses illustrative raga scales and history rather than pretending it measures the linked commercial song recording.
+**What if learning the science of a note could feel as magical as hearing it?**
 
-## Verification
+That's the idea behind TĀRA.
 
-Run core tests (requires Node.js for tests only):
+A place where cultural storytelling meets creative coding, and where something as simple as singing a note can open up an entirely different way of seeing the world.
 
-```bash
-node tests/pitch-core.test.cjs
-node tests/recorded-sample.test.cjs
-```
+---
 
-Both tests passed on the included synthesized reference tone sequences and supplied test WAV; see `QA_NOTES.md`. **Not yet verified:** a physical microphone with the user's actual Carnatic singing and gamakas, real YouTube playback on the user's Mac, and live camera gesture tracking. The browser automation environment blocked page navigation, so a full visual end-to-end signoff is not claimed.
+### ✦ TĀRA — The Universe Inside a Note
 
-## GitHub
-
-From the extracted folder:
-
-```bash
-git init
-git add .
-git commit -m "Build TARA: Carnatic music, pitch science, taala and stellar journey"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-git push -u origin main
-```
-
-Create an empty repository first and replace the placeholder URL with your actual repository URL. If that remote already exists, use `git remote set-url origin <url>` instead of `git remote add origin`.
-
-See `DEMO_GUIDE.md` for a concise application-showcase recording sequence.
-
-
-### Famous Songs (checked)
-The Song Atlas supports Bhagyada Lakshmi Baramma, Vatapi Ganapatim, Nagumomu Ganaleni and Endaro Mahanubhavulu, with interactive swaras, pitch-ratio equations, tonic settings, tala cycles and cultural context. It plays short **synthesized raga-scale sketches**, not the complete copyrighted song performances. The Purandara Dasa artwork in `assets/purandara-dasa.png` is the image provided by the project owner.
+*Because sometimes, the most interesting discoveries begin with a single sound.*
