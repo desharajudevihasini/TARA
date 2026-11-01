@@ -1,3 +1,17 @@
+<div align="center">
+
+# ✦ TĀRA
+### THE UNIVERSE INSIDE A NOTE
+
+*Explore the mathematics, physics, and beauty of Carnatic music.*
+
+### 🌌 [ENTER THE EXPERIENCE ↗](https://desharajudevihasini.github.io/TARA/)
+
+[Live Website](https://desharajudevihasini.github.io/TARA/) · [Source Code](https://github.com/desharajudevihasini/TARA)
+
+</div>
+
+---
 # ✦ TĀRA
 ### The Universe Inside a Note
 
